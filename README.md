@@ -1,51 +1,66 @@
 # bootpop.js
-AJAX enabled Bootstrap modal jQuery plugin set
 
-<h3>Options</h3>
+AJAX Enabled Bootstrap Modal jQuery Plugin Set
 
-        <ul>
-            <li><b>url:</b><br>The url to submit query</li>
+ * AJAX content by default with pre-loader
+ * JSON content handler
+ * Multi-modal (launch modals from inside modals)
+ * Alert and Confirm modals with buttons
+ * Image and HTML content modals
 
-            <li><b>method:</b><br>Request method (get, post)</li>
-             
-            <li><b>size:</b><br>small or large (default: medium)</li>
+## Demos
+[Click here](http://getwebhelp.com/bootpop/) to see the examples in action.
 
-            <li><b>modalHeader:</b><br>true or false (default: true)</li>
+## Usage
+```javasccript
+Bootpop('ajax.php');
+```
+```javasccript
+Bootpop.alert('Some message');
+```
+```javasccript
+Bootpop.ask('Some question');
+```
+```javasccript
+Bootpop.image('/src/to/img.png');
+```
+```javasccript
+Bootpop.html('<h1>Hello</h1><h2>World!</h2>');
+```
 
-            <li><b>title:</b><br>The modal header title (default: null)</li>
-              
-            <li><b>params:</b><br>Object <code>{keyName : value}</code></li>
+## Options
 
-            <li><b>buttons:</b><br>Array <code>
-                [
-                    {
-                        btnClass : 'btn btn-success',
-                        btnLabel : 'YES',
-                        btnValue : 'Y',
-                        btnAction : function(data){
-                            $('.modal').modal('hide')    
-                        }
-                    }
-                ]
-            </code></li>
+* **url:** The url to submit query
+* **method:** Request method (get, post)
+* **size:** small or large (default: medium)
+* **modalHeader:** true or false (default: true)
+* **title:** The modal header title (default: null)
+* **params:** (Object) ```{keyName : value}```
+* **buttons:** (Array) 
+```javascript
+[{ 
+   btnClass : 'btn btn-success', 
+   btnLabel : 'YES', 
+   btnValue : 'Y', 
+   btnAction : function(data){ 
+       $('.modal').modal('hide') 
+   } 
+}]
+```
+* **responseHandler:** (Function) ```function(data){ return data}```
 
-            <li><b>responseHandler:</b><br>Function <code>function(data){ return data}</code></li>
-            
-        </ul>
-        
-        <h3>Styles</h3>
-        <ul>
-            <li><b>modalClass:</b><br>Default: <code>modal fade</code></li>    
-            <li><b>dialogClass:</b><br>Default: <code>modal-dialog</code></li>    
-            <li><b>contentClass:</b><br>Default: <code>modal-content</code></li>    
-            <li><b>headerClass:</b><br>Default: <code>modal-header</code></li>    
-            <li><b>titleClass:</b><br>Default: <code>modal-title</code></li>    
-            <li><b>bodyClass:</b><br>Default: <code>modal-body</code></li>    
-            <li><b>footerClass:</b><br>Default: <code>modal-footer</code></li>    
-            <li><b>imageClass:</b><br>Default: <code>img-responsive</code></li>    
-        </ul>
-        <h3>Events</h3>
-        <ul>
-            <li><b>opened.bp.modal</b><br>Triggered when modal is opened and visable.</li>
-            <li><b>closed.bp.modal</b><br>Triggered when modal is fully closed.</li>
-        </ul>
+### Styles
+
+* **modalClass:** ```modal fade```
+* **dialogClass:**  ```modal-dialog```
+* **contentClass:**  ```modal-content```
+* **headerClass:** ```modal-header```
+* **titleClass:** ```modal-title```
+* **bodyClass:** ```modal-body```
+* **footerClass:** ```modal-footer```
+* **imageClass:** ```img-responsive```
+
+### Events
+
+* **opened.bp.modal** Triggered when modal is opened and visable.
+* **closed.bp.modal** Triggered when modal is fully closed.
